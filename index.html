@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>wtfcolt Projects</title>
+  <style>
+    @font-face {
+      font-family: 'Chicago';
+      src: url('fonts/chicago.ttf') format('truetype');
+    }
+
+    body {
+      font-family: 'Chicago', system-ui, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f5f5;
+      color: #222;
+    }
+
+    header {
+      background: #333;
+      color: #fff;
+      padding: 1rem 2rem;
+      text-align: center;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    section {
+      margin-bottom: 3rem;
+    }
+
+    h1{ 
+      color:#fff
+    }
+
+    h2, h3 {
+      color: #333;
+    }
+
+    a {
+      color: #007acc;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .carousel {
+      position: relative;
+      max-width: 100%;
+      margin: 1rem 0;
+    }
+
+    .carousel img {
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    .carousel-controls {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 0.5rem;
+    }
+
+    .carousel-controls button {
+      background: #333;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    ul.link-list {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul.link-list li {
+      margin-bottom: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Colton Fouse</h1>
+    <p>Games</p>
+  </header>
+
+  <main>
+    <section id="taskbar-titans">
+      <h2>🎮 Taskbar Titans</h2>
+      <p>
+        A hybrid idle game and desktop toy where heroes fight monsters on your taskbar. Level them up, unlock party members, and use your god-like powers to influence the battle.
+      </p>
+      <p>
+        <strong>Demo available now!</strong><br>
+        <a href="https://store.steampowered.com/app/3477820/" target="_blank">View on Steam</a>
+      </p>
+
+      <div class="carousel">
+        <img id="screenshot" src="screenshots/screenshot1.png" alt="Taskbar Titans Screenshot">
+        <div class="carousel-controls">
+          <button onclick="prevScreenshot()">← Previous</button>
+          <button onclick="nextScreenshot()">Next →</button>
+        </div>
+      </div>
+
+      <h3>Taskbar Titans Community & Social Links</h3>
+      <ul class="link-list">
+        <li><a href="https://discord.gg/mkKZZVZcmf" target="_blank">Discord</a></li>
+        <li><a href="https://www.reddit.com/r/TaskbarTitans/" target="_blank">Subreddit</a></li>
+        <li><a href="https://bsky.app/profile/taskbartitans.bsky.social" target="_blank">Bluesky</a></li>
+        <li><a href="https://www.facebook.com/TaskbarTitans" target="_blank">Facebook</a></li>
+        <li><a href="https://www.youtube.com/@TaskbarTitans" target="_blank">YouTube</a></li>
+      </ul>
+    </section>
+
+    <section id="other-projects">
+      <h2>🧪 Other Projects</h2>
+      <h3>Project Ophyr</h3>
+      <p>
+        A space trade game set in a galaxy ruled by corporations and pirates. In it's very early stages.
+      </p>
+      <p>
+        <a href="https://discord.gg/gtSGVH6NTy" target="_blank">Project Ophyr Discord</a>
+      </p>
+    </section>
+
+    <section id="reckless">
+      <h2>🌐 The Reckless Gaming Community</h2>
+      <p>
+        Personally owned server machines hosting servers for most games that support them. Come hang out or join the next hosted world.
+      </p>
+      <p>
+        <a href="https://discord.gg/7DmPfUWP2V" target="_blank">Join The Reckless Discord</a>
+      </p>
+    </section>
+
+    <section id="confrontation">
+      <h2>⚔️ Confrontation (Rackham)</h2>
+      <p>
+        An international community for fans of the classic Rackham miniatures game. Strategy, painting, army lists, and digital tools for keeping the game alive.
+      </p>
+      <ul class="link-list">
+        <li><a href="https://discord.gg/H5EUFkR" target="_blank">Discord</a></li>
+        <li><a href="https://www.reddit.com/r/confrontation/" target="_blank">Subreddit</a></li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>📬 Contact</h2>
+      <p>Email: <a href="mailto:colton.fouse@gmail.com">colton.fouse@gmail.com</a></p>
+      <p>Discord: <a href="https://discord.gg/mkKZZVZcmf" target="_blank">wtfcolt</a></p>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Colton Fouse — All rights reserved.
+  </footer>
+
+  <script>
+    const screenshots = [
+      "screenshots/screenshot1.png",
+      "screenshots/screenshot2.png",
+      "screenshots/screenshot3.png"
+    ];
+    let currentIndex = 0;
+
+    function updateScreenshot() {
+      document.getElementById('screenshot').src = screenshots[currentIndex];
+    }
+
+    function prevScreenshot() {
+      currentIndex = (currentIndex - 1 + screenshots.length) % screenshots.length;
+      updateScreenshot();
+    }
+
+    function nextScreenshot() {
+      currentIndex = (currentIndex + 1) % screenshots.length;
+      updateScreenshot();
+    }
+  </script>
+</body>
+</html>
