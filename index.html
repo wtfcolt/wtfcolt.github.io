@@ -14,7 +14,8 @@
       font-family: 'Chicago', system-ui, sans-serif;
       margin: 0;
       padding: 0;
-      background: #c5c5c5;
+      background: url('images/background.jpg') no-repeat center center fixed;
+      background-size: cover;
       color: #222;
     }
 
@@ -114,7 +115,7 @@
       </p>
 
       <div class="carousel">
-        <img id="screenshot" src="screenshots/screenshot1.png" alt="Taskbar Titans Screenshot">
+        <img id="screenshot" src="images/screenshots/screenshot1.png" alt="Taskbar Titans Screenshot">
         <div class="carousel-controls">
           <button onclick="prevScreenshot()">← Previous</button>
           <button onclick="nextScreenshot()">Next →</button>
@@ -176,10 +177,10 @@
 
   <script>
     const screenshots = [
-      "screenshots/screenshot1.png",
-      "screenshots/screenshot2.png",
-      "screenshots/screenshot3.png",
-      "screenshots/screenshot4.png"
+      "images/screenshots/screenshot1.png",
+      "images/screenshots/screenshot2.png",
+      "images/screenshots/screenshot3.png",
+      "images/screenshots/screenshot4.png"
     ];
     let currentIndex = 0;
 
